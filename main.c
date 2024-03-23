@@ -3,9 +3,10 @@
 int main(int ac, char **argv) // Main function with command-line arguments
 {
     char *prompt = "(Eshell) $ "; // Define a prompt string to display to the user
-    char *lineptr = NULL; // Declare a pointer to a character array, Initializized to NULL
+    char *lineptr = NULL, *lineptr_copy = NULL; // Declare a pointer to a character array, Initializized to NULL & variable to hold copy of string to be passed to strtok
     size_t n = 0; // Store allocated size in bytes
     ssize_t nchars_read; // variable to store number of characters read by getline()
+    const char *delim = " \n"; // variable to hold the delimiters which is an empty space and newline character
 
     (void)ac; (void)argv; // Declaring void variables
 
