@@ -3,15 +3,25 @@
 int main(int ac, char **argv) // Main function with command-line arguments
 {
     char *prompt = "(Eshell) $ "; // Define a prompt string to display to the user
-    char *lineptr; // Declare a pointer to a character array, which will hold the input line
+    char *lineptr = NULL; // Declare a pointer to a character array, Initializized to NULL
     size_t n = 0; // Store allocated size in bytes
+    ssize_t nchars_read; // variable to store number of characters read by getline()
 
     (void)ac; (void)argv; // Declaring void variables
 
-    printf("%s", prompt); // Print the prompt to the console
-    getline(&lineptr, &n, stdin); // Read a line from the standard input (stdin) into lineptr, dynamically allocating memory as needed
-    printf("%s\n", lineptr); // Printing to make sure getline() worked
+        while (1){ // Added a while loop to continue giving us eshell prompt
+            printf("%s", prompt); // Print the prompt to the console
+            nchars_read = getline(&lineptr, &n, stdin); // getting user input with getline and storing the number of chars read in the variable nchars_read
+                if (nchars_read == -1){ // If getline function fails or user types CTRL + D
+                    printf("Exiting shell....\n"); // Print the exit message
+                    return (-1); // Return -1 and exit the program
+                }
 
-    free(lineptr); // Free the memory allocated for lineptr to prevent memory leaks
+            printf("%s\n", lineptr); // Printing to make sure getline() worked
+
+            free(lineptr); // Free the memory allocated for lineptr to prevent memory leaks
+            lineptr = NULL; // Reset lineptr to NULL to avoid dangling pointer
+        }
+
     return (0); // Return 0 to indicate successful execution of the program
 }
