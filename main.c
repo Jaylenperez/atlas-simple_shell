@@ -37,7 +37,10 @@ if (lineptr_copy == NULL){
         num_tokens++;
         token = strtok(NULL, delim);
     }
-    num_tokens++
+    num_tokens++;
+
+    /* allocae space to hold the array of strings */
+     argv = malloc(sizeof(char *) * num_tokens);
 }            printf("%s\n", lineptr); // Printing to make sure getline() worked
 
             free(lineptr); // Free the memory allocated for lineptr to prevent memory leaks
