@@ -7,8 +7,11 @@ int main(int ac, char **argv) // Main function with command-line arguments
     size_t n = 0; // Store allocated size in bytes
     ssize_t nchars_read; // variable to store number of characters read by getline()
     const char *delim = " \n"; // variable to hold the delimiters which is an empty space and newline character
+    int num_tokens = 0;
+    char *token;
+    int i;
 
-    (void)ac; (void)argv; // Declaring void variables
+    (void)ac; // Declaring void variables
 
         while (1){ // Added a while loop to continue giving us eshell prompt
             printf("%s", prompt); // Print the prompt to the console
@@ -32,7 +35,7 @@ if (lineptr_copy == NULL){
     /* calculate the total number of tokens*/
     token = strtok(lineptr, delim);
 
-    while(token!= NULL)
+    while (token != NULL)
     {
         num_tokens++;
         token = strtok(NULL, delim);
@@ -53,12 +56,13 @@ if (lineptr_copy == NULL){
         token = strtok(NULL, delim); 
     }
     argv[i] = NULL;         
-    
-               printf("%s\n", lineptr); // Printing to make sure getline() worked
 
-            free(lineptr); // Free the memory allocated for lineptr to prevent memory leaks
-            lineptr = NULL; // Reset lineptr to NULL to avoid dangling pointer
-        }
+
+    printf("%s\n", lineptr); // Printing to make sure getline() worked
+
+    free(lineptr); // Free the memory allocated for lineptr to prevent memory leaks
+    lineptr = NULL; // Reset lineptr to NULL to avoid dangling pointer
+    }
 
     return (0); // Return 0 to indicate successful execution of the program
 }
