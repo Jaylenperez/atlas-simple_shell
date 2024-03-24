@@ -41,7 +41,20 @@ if (lineptr_copy == NULL){
 
     /* allocae space to hold the array of strings */
      argv = malloc(sizeof(char *) * num_tokens);
-}            printf("%s\n", lineptr); // Printing to make sure getline() worked
+
+     /* store each token in the argv array */
+     token = strtok(lineptr_copy, delim);
+     
+    for(i = 0; token != NULL; i++)
+    {
+        argv[i] = malloc(sizeof(char) * strlen(token));
+        strcpy(argv[i], token);
+ 
+        token = strtok(NULL, delim); 
+    }
+    argv[i] = NULL;         
+    
+               printf("%s\n", lineptr); // Printing to make sure getline() worked
 
             free(lineptr); // Free the memory allocated for lineptr to prevent memory leaks
             lineptr = NULL; // Reset lineptr to NULL to avoid dangling pointer
