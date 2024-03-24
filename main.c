@@ -24,9 +24,20 @@ if (lineptr_copy == NULL){
 
     return(-1);
 }
+
     /*copy lineptr to lineptr_copy*/
     strcpy(lineptr_copy, lineptr);
-    
+
+    /* slit the string (lineptr) into an array of words*/
+    /* calculate the total number of tokens*/
+    token = strtok(lineptr, delim);
+
+    while(token!= NULL)
+    {
+        num_tokens++;
+        token = strtok(NULL, delim);
+    }
+    num_tokens++
 }            printf("%s\n", lineptr); // Printing to make sure getline() worked
 
             free(lineptr); // Free the memory allocated for lineptr to prevent memory leaks
