@@ -17,8 +17,17 @@ int main(int ac, char **argv) // Main function with command-line arguments
                     printf("Exiting shell....\n"); // Print the exit message
                     return (-1); // Return -1 and exit the program
                 }
+/*allocate space for a copy of the lineptr*/
+    lineptr_copy = malloc(sizeof(char) *nchars_read);
+if (lineptr_copy == NULL){
+    perror("tsh: memory allocation error");
 
-            printf("%s\n", lineptr); // Printing to make sure getline() worked
+    return(-1);
+}
+    /*copy lineptr to lineptr_copy*/
+    strcpy(lineptr_copy, lineptr);
+    
+}            printf("%s\n", lineptr); // Printing to make sure getline() worked
 
             free(lineptr); // Free the memory allocated for lineptr to prevent memory leaks
             lineptr = NULL; // Reset lineptr to NULL to avoid dangling pointer
