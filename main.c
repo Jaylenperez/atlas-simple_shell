@@ -59,11 +59,10 @@ int main(int ac, char **argv) // Main function with command-line arguments
         }
         argv[i] = NULL;
 
-
-        printf("%s\n", lineptr); // Printing to make sure getline() worked
-
         free(lineptr); // Free the memory allocated for lineptr to prevent memory leaks
         lineptr = NULL; // Reset lineptr to NULL to avoid dangling pointer
+
+        free(argv);
     }
 
     return (0); // Return 0 to indicate successful execution of the program
