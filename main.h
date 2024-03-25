@@ -5,5 +5,8 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <string.h>
+#include <unistd.h>
+
+void execmd(char **argv);
 
 #endif

@@ -59,11 +59,12 @@ int main(int ac, char **argv) // Main function with command-line arguments
         }
         argv[i] = NULL;
 
-        free(lineptr); // Free the memory allocated for lineptr to prevent memory leaks
-        lineptr = NULL; // Reset lineptr to NULL to avoid dangling pointer
-
-        free(argv);
+        execmd(argv);
     }
+    
+    free(lineptr_copy);
+    free(lineptr); // Free the memory allocated for lineptr to prevent memory leaks
+    lineptr = NULL; // Reset lineptr to NULL to avoid dangling pointer
 
     return (0); // Return 0 to indicate successful execution of the program
 }
