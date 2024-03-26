@@ -58,7 +58,7 @@ int main(int ac, char **argv)
     
     free(lineptr_copy);
     free(lineptr);
-    lineptr = NULL;
+    // lineptr = NULL;
 
     return (0);
 }
