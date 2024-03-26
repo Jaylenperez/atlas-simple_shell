@@ -10,7 +10,6 @@ int main(int ac, char **argv)
     int num_tokens = 0;
     char *token;
     int i;
-    char **argv;
 
     (void)ac;
 
