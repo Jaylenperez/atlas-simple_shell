@@ -22,7 +22,7 @@ int main(int ac, char **argv)
             printf("Exiting shell....\n");
             break;
         }
-        lineptr_copy = malloc(sizeof(char) *nchars_read);
+        lineptr_copy = malloc(sizeof(char) * (nchars_read + 1));
         if (lineptr_copy == NULL)
         {
             perror("tsh: memory allocation error");
