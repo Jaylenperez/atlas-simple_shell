@@ -2,17 +2,17 @@
 
 void execmd(char **argv)
 {
-    char *command = NULL; // Declare a pointer to a character (string) and initialize it to NULL
+    char *command = NULL, *actual_command = NULL;
 
-    if (argv) // Check if the argv pointer is not NULL
+    if (argv)
     {
-        /* Get the command */
-        command = argv[0]; // Assign the first element of argv (command name) to the command pointer
+        command = argv[0];
 
-        /* Execute the command with execve */
-        if (execve(command, argv, NULL) == -1) // Attempt to execute the command using execve. If execve returns -1, it indicates an error
+        actual_command = get_location(command);
+
+        if (execve(actual_command, argv, NULL) == -1)
         {
-            perror("Error:"); // Print an error message to stderr, prefixed with "Error:"
+            perror("Error:");
         }
     }
 }

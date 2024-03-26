@@ -1,28 +1,27 @@
 #include "main.h"
 
-int main(int ac, char **argv) // Main function with command-line arguments
+int main(int ac, char **argv)
 {
-    char *prompt = "(Eshell) $ "; // Define a prompt string to display to the user
-    char *lineptr = NULL, *lineptr_copy = NULL; // Declare a pointer to a character array, Initializized to NULL & variable to hold copy of string to be passed to strtok
-    size_t n = 0; // Store allocated size in bytes
-    ssize_t nchars_read; // variable to store number of characters read by getline()
-    const char *delim = " \n"; // variable to hold the delimiters which is an empty space and newline character
+    char *prompt = "(Eshell) $ ";
+    char *lineptr = NULL, *lineptr_copy = NULL;
+    size_t n = 0;
+    ssize_t nchars_read;
+    const char *delim = " \n";
     int num_tokens = 0;
     char *token;
     int i;
 
-    (void)ac; // Declaring void variables
+    (void)ac;
 
-    while (1) // Added a while loop to continue giving us eshell prompt
+    while (1)
     {
-        printf("%s", prompt); // Print the prompt to the console
-        nchars_read = getline(&lineptr, &n, stdin); // getting user input with getline and storing the number of chars read in the variable nchars_read
-        if (nchars_read == -1) // If getline function fails or user types CTRL + D
+        printf("%s", prompt);
+        nchars_read = getline(&lineptr, &n, stdin);
+        if (nchars_read == -1)
         {
-            printf("Exiting shell....\n"); // Print the exit message
-            return (-1); // Return -1 and exit the program
+            printf("Exiting shell....\n");
+            return (-1);
         }
-        // allocate space for a copy of the lineptr*/
         lineptr_copy = malloc(sizeof(char) *nchars_read);
         if (lineptr_copy == NULL)
         {
@@ -30,11 +29,8 @@ int main(int ac, char **argv) // Main function with command-line arguments
 
             return(-1);
         }
-        //copy lineptr to lineptr_copy*/
         strcpy(lineptr_copy, lineptr);
 
-        // slit the string (lineptr) into an array of words*/
-        // calculate the total number of tokens*/
         token = strtok(lineptr, delim);
 
         while (token != NULL)
@@ -44,10 +40,8 @@ int main(int ac, char **argv) // Main function with command-line arguments
         }
         num_tokens++;
 
-        // allocae space to hold the array of strings */
         argv = malloc(sizeof(char *) * num_tokens);
 
-        // store each token in the argv array */
         token = strtok(lineptr_copy, delim);
      
         for(i = 0; token != NULL; i++)
@@ -63,8 +57,8 @@ int main(int ac, char **argv) // Main function with command-line arguments
     }
     
     free(lineptr_copy);
-    free(lineptr); // Free the memory allocated for lineptr to prevent memory leaks
-    lineptr = NULL; // Reset lineptr to NULL to avoid dangling pointer
+    free(lineptr);
+    lineptr = NULL;
 
-    return (0); // Return 0 to indicate successful execution of the program
+    return (0);
 }
