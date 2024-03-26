@@ -1,6 +1,6 @@
 #include "main.h"
 
-char*get_location(char *command){
+char *get_location(char *command){
     char *path, *path_copy, *path_token, *file_path;
     int command_length, directory_length;
     struct stat buffer;
@@ -16,15 +16,15 @@ char*get_location(char *command){
         /* breaks down the path variable and gets the directories */
         path_token = strtok(path_copy, ":");
 
-        while (path_token!= NULL) {
+        while(path_token != NULL) {
             /* gets the length of the directory */
             directory_length = strlen(path_token);
             /*allocates memory for storing the command name with the length */
-            file_path= malloc(command_length + directory_length + 2);
+            file_path = malloc(command_length + directory_length + 2);
             /* to build the path for the command */
             strcpy(file_path, path_token);
             strcat(file_path, "/");
-            strcat(file+path, command);
+            strcat(file_path, command);
             strcat(file_path, "\0");
 
             /* we are testing if this file path actually works */
@@ -44,7 +44,7 @@ char*get_location(char *command){
             }
         }
 
-        /* if file+path doesn't exist for the command */
+        /* if file_path doesn't exist for the command */
         free(path_copy);
 
         /* before we exit without luck, let's test it */
