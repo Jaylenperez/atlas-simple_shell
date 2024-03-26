@@ -20,14 +20,13 @@ int main(int ac, char **argv)
         if (nchars_read == -1)
         {
             printf("Exiting shell....\n");
-            return (-1);
+            break;
         }
         lineptr_copy = malloc(sizeof(char) *nchars_read);
         if (lineptr_copy == NULL)
         {
             perror("tsh: memory allocation error");
-
-            return(-1);
+            break;
         }
         strcpy(lineptr_copy, lineptr);
 
@@ -40,25 +39,29 @@ int main(int ac, char **argv)
         }
         num_tokens++;
 
-        argv = malloc(sizeof(char *) * num_tokens);
+        char **argv = malloc(sizeof(char *) * num_tokens);
 
         token = strtok(lineptr_copy, delim);
      
         for(i = 0; token != NULL; i++)
         {
-            argv[i] = malloc(sizeof(char) * strlen(token));
+            argv[i] = malloc(sizeof(char) * (strlen(token) + 1));
             strcpy(argv[i], token);
- 
             token = strtok(NULL, delim); 
         }
         argv[i] = NULL;
 
         execmd(argv);
+
+        for (i = 0; i < num_tokens - 1; i++)
+        {
+            free(argv[i]);
+        }
+        free(argv);
+        free(lineptr_copy);
     }
     
-    free(lineptr_copy);
     free(lineptr);
-    // lineptr = NULL;
 
     return (0);
 }
