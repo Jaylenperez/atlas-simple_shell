@@ -1,3 +1,8 @@
+Introduction
+
+This repository is for the Atlas School Simple Shell Project that Jaylen Perez and Suntha Lucas are team members of.  The project consist on writing a shell like sh, using a limited number of standard library functions, where we used our own functions that were have been used over the past 2.5 months. 
+
+
 The History of the UNIX operating system
 The first release of Unix was implemented in the distant year of 1969, where one of its capabilities was to be able to run a video game called “Space Travel”. 
 The researcher behind this was the great Ken Thompson, an American computer scientist who received the Turing prize together with another scientist and colleague (and longtime friend) Dennis Ritchie – the inventor of the C language. 
