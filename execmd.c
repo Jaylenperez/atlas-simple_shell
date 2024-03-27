@@ -1,5 +1,7 @@
 #include "main.h"
 
+extern char** environ;
+
 void execmd(char **argv)
 {
     char *command = NULL, *actual_command = NULL;
@@ -15,7 +17,15 @@ void execmd(char **argv)
             printf("Exiting shell....\n");
             exit(EXIT_SUCCESS);
         }
-        
+        else if (strcmp(command, "env") == 0)
+        {
+            for (char** current = environ; *current != 0; current++)
+            {
+                printf("%s\n", *current);
+            }
+            return;
+        }
+
         actual_command = get_location(command);
 
         if (actual_command == NULL)
