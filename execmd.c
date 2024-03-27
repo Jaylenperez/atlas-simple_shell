@@ -9,6 +9,13 @@ void execmd(char **argv)
     if (argv)
     {
         command = argv[0];
+
+        if (strcmp(command, "exit") == 0)
+        {
+            printf("Exiting shell....\n");
+            exit(EXIT_SUCCESS);
+        }
+        
         actual_command = get_location(command);
 
         if (actual_command == NULL)
