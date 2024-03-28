@@ -37,11 +37,11 @@ The shell supports standard commands, as well as some special commands for envir
 
 ## :floppy_disk: <span id="prototypes">Prototypes</span>
 
-- 'int main(void);' : main function of the Simple Shell (entry point).
+- `int main(void);` : main function of the Simple Shell (entry point).
 
-- 'void execmd(char **argv);' : used to execute a command passed as an argument in shell environment
+- `void execmd(char **argv);` : used to execute a command passed as an argument in shell environment
 
-- 'char *get_location(char *command);' : used to extract the location information from a given command string
+- `char *get_location(char *command);` : used to extract the location information from a given command string
 
 ## :clipboard: <span id="requirements">Requirements</span>
 - Allowed editors: **vi**, **vim**, **emacs**.
@@ -53,7 +53,7 @@ The shell supports standard commands, as well as some special commands for envir
 - Your shell should not have any memory leaks.
 
 ## :floppy_disk: <span id="compilation-command">Compilation Command</a>
-'gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o eshell
+`gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o eshell`
 
 ## :ocean: <span id="flowcharts">Flowcharts</a>
 
@@ -69,17 +69,17 @@ To install and run our Simple Shell, follow these steps:
 
 Clone the repository using the following command:
 
-git clone https://github.com/jaylenperez/atlas-simple_shell.git
+`git clone https://github.com/jaylenperez/atlas-simple_shell.git`
 
 Navigate to the directory where the repository was cloned.
 
 Compile the program by running the following command:
 
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o eshell
+`gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o eshell`
 
 Run the program by typing the following command:
 
-./eshell
+`./eshell`
 
 ### Using the Simple Shell:
 
@@ -89,15 +89,15 @@ The program will execute the command and display the output to the screen.
 
 Here are some examples of commands that you can run:
 
-- 'ls': list the contents of the current directory.
-- 'pwd': print the path of the current working directory.
-- 'echo': display a message on the screen.
-- 'mkdir': create a new directory.
-- 'exit': exit the shell.
+- `ls`: list the contents of the current directory.
+- `pwd`: print the path of the current working directory.
+- `echo`: display a message on the screen.
+- `mkdir`: create a new directory.
+- `exit`: exit the shell.
 
 ## :blue_book: <span id="man-page">MAN page</a>
 
-Execution: 'man_1_simple_shell'
+Execution: `man_1_simple_shell`
 
 ![Image](Insert screenshot of man page here)
 
