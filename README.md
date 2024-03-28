@@ -61,7 +61,7 @@ The shell supports standard commands, as well as some special commands for envir
 
 ## :open_file_folder: <span id="files-description">Files Description</span>
 
-## :computer: <span id="install">How to install, run, and use our Simple Shell:</a>
+## :computer: <span id="install_run_use">How to install, run, and use our Simple Shell:</a>
 
 ### Install and run:
 
