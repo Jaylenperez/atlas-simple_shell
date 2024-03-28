@@ -1,1 +1,7 @@
-S
+# complied source #
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so:wq
