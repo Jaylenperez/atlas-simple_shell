@@ -2,13 +2,13 @@
 
 extern char **environ;
 
-void exec_exit()
+void exec_exit(void)
 {
 	printf("Exiting shell....\n");
 	exit(EXIT_SUCCESS);
 }
 
-void exec_env()
+void exec_env(void)
 {
 	for (char **current = environ; *current != 0; current++)
 	{
