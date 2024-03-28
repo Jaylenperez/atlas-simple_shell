@@ -4,4 +4,4 @@
 *.dll
 *.exe
 *.o
-*.so:wq
+*.so
