@@ -106,4 +106,4 @@ Execution: `man_1_simple_shell`
 - Github: [@Sunnilu](https://github.com/Sunnilu)
 
 **Jaylen Perez**
-- Github: [@Jaylenperez](https://github.com/Jaylen)
+- Github: [@Jaylenperez](https://github.com/Jaylenperez)
