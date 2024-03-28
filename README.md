@@ -11,7 +11,7 @@
         <br>
         :floppy_disk: <a href="#prototypes">Prototypes</a>
         <br>
-        :clipboard: <a href="requirements">Requirements</a>
+        :clipboard: <a href="#requirements">Requirements</a>
         <br>
         :floppy_disk: <a href="#compilation-command">Compilation Command</a>
         <br>
@@ -21,7 +21,7 @@
         <br>
         :computer: <a href="#install_run_use">How to install and run our Simple Shell</a>
         <br>
-        :blue_book: <a href="man-page">MAN page</a>
+        :blue_book: <a href="#man-page">MAN page</a>
         <br>
         :sparkles: <a href="#authors">Authors</a>
 </details>
