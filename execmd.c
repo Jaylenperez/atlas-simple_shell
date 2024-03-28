@@ -1,12 +1,47 @@
 #include "main.h"
 
-extern char** environ;
+extern char **environ;
+
+void exec_exit()
+{
+	printf("Exiting shell....\n");
+	exit(EXIT_SUCCESS);
+}
+
+void exec_env()
+{
+	for (char **current = environ; *current != 0; current++)
+	{
+		printf("%s\n", *current);
+	}
+}
+
+void exec_command(char **argv, char *actual_command)
+{
+	pid_t pid;
+	int status;
+
+	pid = fork();
+	if (pid < 0)
+	{
+		perror("Error forking");
+		return;
+	} else if (pid == 0)
+	{
+		if (execve(actual_command, argv, NULL) == -1)
+		{
+			perror("Error executing command");
+			exit(EXIT_FAILURE);
+		}
+	} else
+	{
+		waitpid(pid, &status, 0);
+	}
+}
 
 void execmd(char **argv)
 {
 	char *command = NULL, *actual_command = NULL;
-	pid_t pid;
-	int status;
 
 	if (argv)
 	{
@@ -14,15 +49,10 @@ void execmd(char **argv)
 
 		if (strcmp(command, "exit") == 0)
 		{
-			printf("Exiting shell....\n");
-			exit(EXIT_SUCCESS);
-		}
-		else if (strcmp(command, "env") == 0)
+			exec_exit();
+		} else if (strcmp(command, "env") == 0)
 		{
-			for (char** current = environ; *current != 0; current++)
-			{
-				printf("%s\n", *current);
-			}
+			exec_env();
 			return;
 		}
 
@@ -34,23 +64,6 @@ void execmd(char **argv)
 			return;
 		}
 
-		pid = fork();
-		if (pid < 0)
-		{
-			perror("Error forking");
-			return;
-		}
-		else if (pid == 0)
-		{
-			if (execve(actual_command, argv, NULL) == -1)
-			{
-				perror("Error executing command");
-				exit(EXIT_FAILURE);
-			}
-		}
-		else
-		{
-			waitpid(pid, &status, 0);
-		}
+		exec_command(argv, actual_command);
 	}
 }
