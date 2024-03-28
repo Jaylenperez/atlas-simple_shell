@@ -95,7 +95,7 @@ Here are some examples of commands that you can run:
 - `mkdir`: create a new directory.
 - `exit`: exit the shell.
 
-## :blue_book: <span id="man-page">MAN page</a>
+## :blue_book: <span id="man-page">MAN page</span>
 
 Execution: `man_1_simple_shell`
 
