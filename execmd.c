@@ -4,53 +4,53 @@ extern char** environ;
 
 void execmd(char **argv)
 {
-    char *command = NULL, *actual_command = NULL;
-    pid_t pid;
-    int status;
+	char *command = NULL, *actual_command = NULL;
+	pid_t pid;
+	int status;
 
-    if (argv)
-    {
-        command = argv[0];
+	if (argv)
+	{
+		command = argv[0];
 
-        if (strcmp(command, "exit") == 0)
-        {
-            printf("Exiting shell....\n");
-            exit(EXIT_SUCCESS);
-        }
-        else if (strcmp(command, "env") == 0)
-        {
-            for (char** current = environ; *current != 0; current++)
-            {
-                printf("%s\n", *current);
-            }
-            return;
-        }
+		if (strcmp(command, "exit") == 0)
+		{
+			printf("Exiting shell....\n");
+			exit(EXIT_SUCCESS);
+		}
+		else if (strcmp(command, "env") == 0)
+		{
+			for (char** current = environ; *current != 0; current++)
+			{
+				printf("%s\n", *current);
+			}
+			return;
+		}
 
-        actual_command = get_location(command);
+		actual_command = get_location(command);
 
-        if (actual_command == NULL)
-        {
-            fprintf(stderr, "Error: command not found: %s\n", command);
-            return;
-        }
+		if (actual_command == NULL)
+		{
+			fprintf(stderr, "Error: command not found: %s\n", command);
+			return;
+		}
 
-        pid = fork();
-        if (pid < 0)
-        {
-            perror("Error forking");
-            return;
-        }
-        else if (pid == 0)
-        {
-            if (execve(actual_command, argv, NULL) == -1)
-            {
-                perror("Error executing command");
-                exit(EXIT_FAILURE);
-            }   
-        }
-        else
-        {
-            waitpid(pid, &status, 0);
-        }
-    }
+		pid = fork();
+		if (pid < 0)
+		{
+			perror("Error forking");
+			return;
+		}
+		else if (pid == 0)
+		{
+			if (execve(actual_command, argv, NULL) == -1)
+			{
+				perror("Error executing command");
+				exit(EXIT_FAILURE);
+			}   
+		}
+		else
+		{
+			waitpid(pid, &status, 0);
+		}
+	}
 }
