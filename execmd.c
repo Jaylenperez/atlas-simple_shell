@@ -46,7 +46,7 @@ void execmd(char **argv)
 			{
 				perror("Error executing command");
 				exit(EXIT_FAILURE);
-			}   
+			}
 		}
 		else
 		{
