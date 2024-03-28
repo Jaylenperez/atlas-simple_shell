@@ -54,3 +54,56 @@ The shell supports standard commands, as well as some special commands for envir
 
 ## :floppy_disk: <span id="compilation-command">Compilation Command</a>
 'gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o eshell
+
+## :ocean: <span id="flowcharts">Flowcharts</a>
+
+![Image](insert image link here)
+
+## :open_file_folder: <span id="files-description">Files Description</span>
+
+## :computer: <span id="install">How to install, run, and use our Simple Shell:</a>
+
+### Install and run:
+
+To install and run our Simple Shell, follow these steps:
+
+Clone the repository using the following command:
+
+git clone https://github.com/jaylenperez/atlas-simple_shell.git
+
+Navigate to the directory where the repository was cloned.
+
+Compile the program by running the following command:
+
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o eshell
+
+Run the program by typing the following command:
+
+./eshell
+
+### Using the Simple Shell:
+
+To use the Shell, type a command and press Enter.
+<br>
+The program will execute the command and display the output to the screen.
+
+Here are some examples of commands that you can run:
+
+- 'ls': list the contents of the current directory.
+- 'pwd': print the path of the current working directory.
+- 'echo': display a message on the screen.
+- 'mkdir': create a new directory.
+- 'exit': exit the shell.
+
+## :blue_book: <span id="man-page">MAN page</a>
+
+Execution: 'man_1_simple_shell'
+
+![Image](Insert screenshot of man page here)
+
+## :sparkles: <span id="authors">Authors</span>
+**Suntha Lucas**
+- Github: [@Sunnilu](https://github.com/Sunnilu)
+
+**Jaylen Perez**
+- Github: [@Jaylenperez](https://github.com/Jaylen)
