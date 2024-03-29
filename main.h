@@ -13,6 +13,7 @@ void execmd(char **argv);
 char *get_location(char *command);
 int stat(const char *pathname, struct stat *statbuf);
 char *_getenv(const char *name);
+char *_strdup(const char *str);
 
 
 
