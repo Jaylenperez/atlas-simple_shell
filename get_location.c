@@ -1,13 +1,15 @@
 #include "main.h"
 
-char *get_location(char *command){
+char *get_location(char *command)
+{
 	char *path, *path_copy, *path_token, *file_path;
 	int command_length, directory_length;
 	struct stat buffer;
 
 	path = getenv("PATH");
 
-	if (path){
+	if (path)
+	{
 		/* duplicates the path string -> remember to free up the memory */
 		path_copy = strdup(path);
 		/* get the length of the command that was passed */
@@ -16,7 +18,8 @@ char *get_location(char *command){
 		/* breaks down the path variable and gets the directories */
 		path_token = strtok(path_copy, ":");
 
-		while(path_token != NULL) {
+		while(path_token != NULL)
+		{
 			/* gets the length of the directory */
 			directory_length = strlen(path_token);
 			/*allocates memory for storing the command name with the length */
@@ -28,7 +31,8 @@ char *get_location(char *command){
 			strcat(file_path, "\0");
 
 			/* we are testing if this file path actually works */
-			if (stat(file_path, &buffer) == 0) {
+			if (stat(file_path, &buffer) == 0)
+			{
 				/* the return value of 0 means success */
 
 				/* let's free up allocated memory before returning file_path */
@@ -36,7 +40,8 @@ char *get_location(char *command){
 
 				return (file_path);
 			}
-			else {
+			else
+			{
 				/*free up the file+path memory */
 				free(file_path);
 				path_token = strtok(NULL, ":");
