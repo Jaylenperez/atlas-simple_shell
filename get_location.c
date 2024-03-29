@@ -18,7 +18,7 @@ char *get_location(char *command)
 		/* breaks down the path variable and gets the directories */
 		path_token = strtok(path_copy, ":");
 
-		while(path_token != NULL)
+		while(path_token != NULL) 
 		{
 			/* gets the length of the directory */
 			directory_length = strlen(path_token);
