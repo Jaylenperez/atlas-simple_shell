@@ -45,7 +45,7 @@ char *get_location(char *command)
 				/*free up the file+path memory */
 				free(file_path);
 				path_token = strtok(NULL, ":");
-			
+
 			}
 		}
 
