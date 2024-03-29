@@ -9,13 +9,18 @@ int main(int ac, char **argv)
     const char *delim = " \n";
     int num_tokens = 0;
     char *token;
-    int i;
+    int i, interactive;
 
     (void)ac;
 
     while (1)
     {
-        printf("%s", prompt);
+        interactive = isatty(STDIN_FILENO);
+        if (interactive)
+        {
+            printf("%s", prompt);
+        }
+        
         nchars_read = getline(&lineptr, &n, stdin);
         if (nchars_read == -1)
         {
