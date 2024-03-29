@@ -11,6 +11,10 @@ char *get_location(char *command)
 	if (path)
 	{
 		path_copy = _strdup(path);
+		if (path_copy == NULL)
+		{
+			return (NULL);
+		}
 		command_length = strlen(command);
 
 		path_token = strtok(path_copy, ":");
@@ -19,6 +23,11 @@ char *get_location(char *command)
 		{
 			directory_length = strlen(path_token);
 			file_path = malloc(command_length + directory_length + 2);
+			if (file_path == NULL)
+			{
+				free (path_copy);
+				return (NULL);
+			}
 			strcpy(file_path, path_token);
 			strcat(file_path, "/");
 			strcat(file_path, command);
