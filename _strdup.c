@@ -20,4 +20,5 @@ char *_strdup(const char *str)
         *ptr = '\0';
     }
     return (dup);
+    free(dup);
 }
