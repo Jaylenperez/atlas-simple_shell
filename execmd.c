@@ -10,7 +10,8 @@ void exec_exit(void)
 
 void exec_env(void)
 {
-	for (char **current = environ; *current != 0; current++)
+	char **current;
+	for (current = environ; *current != 0; current++)
 	{
 		printf("%s\n", *current);
 	}
