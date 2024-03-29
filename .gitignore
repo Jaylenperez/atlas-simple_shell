@@ -5,3 +5,7 @@
 *.exe
 *.o
 *.so
+
+.vscode
+settings.json
+eshell
