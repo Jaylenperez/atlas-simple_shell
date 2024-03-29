@@ -6,7 +6,7 @@ char *get_location(char *command)
 	int command_length, directory_length;
 	struct stat buffer;
 
-	path = getenv("PATH");
+	path = _getenv("PATH");
 
 	if (path)
 	{
