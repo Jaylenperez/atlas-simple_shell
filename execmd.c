@@ -4,7 +4,7 @@ extern char **environ;
 
 void exec_exit(void)
 {
-	printf("Exiting shell....\n");
+	/* printf("Exiting shell....\n"); */
 	exit(EXIT_SUCCESS);
 }
 
