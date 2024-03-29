@@ -24,7 +24,7 @@ int main(int ac, char **argv)
         nchars_read = getline(&lineptr, &n, stdin);
         if (nchars_read == -1)
         {
-            // printf("Exiting shell....\n");
+            /* printf("Exiting shell....\n"); */
             break;
         }
         lineptr_copy = malloc(sizeof(char) * (nchars_read + 1));
