@@ -17,7 +17,7 @@ void exec_env(void)
 	}
 }
 
-void exec_command(char **argv, char *actual_command)
+void exec_command(char **argv, char *actual_command, int mallocd)
 {
 	pid_t pid;
 	int status;
@@ -37,8 +37,8 @@ void exec_command(char **argv, char *actual_command)
 	} else
 	{
 		waitpid(pid, &status, 0);
-		/* if (mallocd == 1) */
-			/* free(actual_command); */
+		if (mallocd == 1)
+			free(actual_command);
 	}
 }
 
@@ -69,9 +69,9 @@ void execmd(char **argv)
 			/* fprintf(stderr, "Error: command not found: %s\n", command); */
 			/* return; */
 		}
-		else if (actual_command && not_mallocd == 0 && mallocd == 0)
+		else if (actual_command && not_mallocd == 0)
 			mallocd = 1;
 
-		exec_command(argv, actual_command);
+		exec_command(argv, actual_command, mallocd);
 	}
 }
