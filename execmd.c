@@ -38,7 +38,7 @@ void exec_command(char **argv, char *actual_command, int mallocd)
 	{
 		waitpid(pid, &status, 0);
 		if (mallocd == 1)
-			free(actual_command);
+			/* free(actual_command); */
 	}
 }
 
