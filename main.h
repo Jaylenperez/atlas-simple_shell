@@ -14,7 +14,4 @@ char *get_location(char *command);
 char *_getenv(const char *name);
 char *_strdup(const char *str);
 
-
-
 #endif
-
