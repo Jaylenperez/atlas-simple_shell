@@ -69,7 +69,7 @@ void execmd(char **argv)
 			/* fprintf(stderr, "Error: command not found: %s\n", command); */
 			/* return; */
 		}
-		else if (actual_command && not_mallocd == 0)
+		else if (actual_command && not_mallocd == 0 && mallocd == 0)
 			mallocd = 1;
 
 		exec_command(argv, actual_command, mallocd);
