@@ -47,7 +47,7 @@ int main(int ac, char **argv)
         argv = malloc(sizeof(char *) * num_tokens);
 
         token = strtok(lineptr_copy, delim);
-        
+
         for(i = 0; token != NULL; i++)
         {
             argv[i] = malloc(sizeof(char) * (strlen(token) + 1));
