@@ -21,6 +21,7 @@ void exec_command(char **argv, char *actual_command, int mallocd)
 {
 	pid_t pid;
 	int status;
+	mallocd = 0;
 
 	pid = fork();
 	if (pid < 0)
