@@ -72,13 +72,6 @@ void execmd(char **argv)
 		else if (actual_command && not_mallocd == 0)
 			mallocd = 1;
 
-		if (access(actual_command, X_OK) != 0)
-		{
-			if (mallocd == 1)
-				free(actual_command);
-			exit(-24);
-		}
-
 		exec_command(argv, actual_command, mallocd);
 	}
 }
