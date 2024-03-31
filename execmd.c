@@ -37,6 +37,7 @@ void exec_command(char **argv, char *actual_command)
 	} else
 	{
 		waitpid(pid, &status, 0);
+		free(actual_command);
 	}
 }
 
