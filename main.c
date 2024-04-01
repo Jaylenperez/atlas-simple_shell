@@ -27,6 +27,23 @@ int main(int ac, char **argv)
             free(lineptr);
             exit(EXIT_SUCCESS);
         }
+
+        int is_space_only = 1;
+        for (int i = 0; i < nchars_read - 1; i++)
+        {
+            if (lineptr[i] != ' ' && lineptr[i] != '\t')
+            {
+                is_space_only = 0;
+                break;
+            }
+        }
+
+        if (is_space_only)
+        {
+            free(lineptr);
+            exit(EXIT_SUCCESS);
+        }
+        
         lineptr_copy = malloc(sizeof(char) * (nchars_read + 1));
         if (lineptr_copy == NULL)
             break;
