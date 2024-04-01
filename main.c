@@ -33,6 +33,7 @@ int main(int ac, char **argv)
 
         strcpy(lineptr_copy, lineptr);
 
+        num_tokens = 0;
         token = strtok(lineptr, delim);
 
         while (token != NULL)
