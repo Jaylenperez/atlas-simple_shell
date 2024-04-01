@@ -24,18 +24,22 @@ int main(int ac, char **argv)
         nchars_read = getline(&lineptr, &n, stdin);
         if (nchars_read == -1)
         {
-            /* printf("Exiting shell....\n"); */
-            break;
+            free(lineptr);
+            exit(EXIT_SUCCESS);
         }
         lineptr_copy = malloc(sizeof(char) * (nchars_read + 1));
         if (lineptr_copy == NULL)
-        {
-            perror("tsh: memory allocation error");
-            break;
-        }
+            return (NULL);
+
         strcpy(lineptr_copy, lineptr);
 
         token = strtok(lineptr, delim);
+        if (token == NULL)
+        {
+            free(lineptr);
+            free(lineptr_copy);
+            return (NULL);
+        }
 
         while (token != NULL)
         {
@@ -45,6 +49,8 @@ int main(int ac, char **argv)
         num_tokens++;
 
         argv = malloc(sizeof(char *) * num_tokens);
+        if (argv == NULL)
+            return (NULL);
 
         token = strtok(lineptr_copy, delim);
 
