@@ -2,11 +2,9 @@
 
 extern char **environ;
 
-void exec_exit(void)
-{
+/*void exec_exit(void)*/
 	/* printf("Exiting shell....\n"); */
-	exit(EXIT_SUCCESS);
-}
+	/* exit(EXIT_SUCCESS); */
 
 void exec_env(void)
 {
@@ -55,7 +53,7 @@ void execmd(char **argv)
 		{
 			free(argv);
 			free(command);
-			exec_exit();
+			exit(EXIT_SUCCESS);
 		} 
 		else if (strcmp(command, "env") == 0)
 		{
