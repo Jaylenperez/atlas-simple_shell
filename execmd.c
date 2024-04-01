@@ -17,7 +17,7 @@ void exec_env(void)
 	}
 }
 
-void exec_command(char **argv, char *actual_command, int mallocd)
+void exec_command(char *actual_command, char **argv, int mallocd)
 {
 	pid_t pid;
 	int status;
@@ -38,7 +38,7 @@ void exec_command(char **argv, char *actual_command, int mallocd)
 	{
 		waitpid(pid, &status, 0);
 		if (mallocd == 1)
-			free(argv);
+			free(actual_command);
 	}
 }
 
