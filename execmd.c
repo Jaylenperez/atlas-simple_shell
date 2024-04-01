@@ -56,6 +56,7 @@ void execmd(char **argv)
 			free(argv);
 			free(command);
 			exec_exit();
+			return;
 		} else if (strcmp(command, "env") == 0)
 		{
 			exec_env();
