@@ -56,8 +56,8 @@ void execmd(char **argv)
 			free(argv);
 			free(command);
 			exec_exit();
-			return;
-		} else if (strcmp(command, "env") == 0)
+		} 
+		else if (strcmp(command, "env") == 0)
 		{
 			exec_env();
 			return;
@@ -76,5 +76,8 @@ void execmd(char **argv)
 			mallocd = 1;
 
 		exec_command(argv, actual_command, mallocd);
+
+		if(mallocd)
+			free(actual_command);
 	}
 }
