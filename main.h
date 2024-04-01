@@ -13,6 +13,6 @@ void execmd(char **argv);
 char *get_location(char *command);
 char *_getenv(const char *name);
 char *_strdup(const char *str);
-void exec_command(char *actual_command, char **argv, int mallocd);
+void exec_command(char **argv, char *actual_command, int mallocd);
 
 #endif
