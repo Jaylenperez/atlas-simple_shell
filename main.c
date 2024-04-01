@@ -9,7 +9,8 @@ int main(int ac, char **argv)
     const char *delim = " \n";
     int num_tokens = 0;
     char *token;
-    int i, interactive;
+    int i, j, interactive;
+    int is_space_only = 1;
 
     (void)ac;
 
@@ -27,8 +28,6 @@ int main(int ac, char **argv)
             free(lineptr);
             exit(EXIT_SUCCESS);
         }
-
-        int j, is_space_only = 1;
         
         for (j = 0; j < nchars_read - 1; j++)
         {
