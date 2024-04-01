@@ -29,7 +29,7 @@ void exec_command(char **argv, char *actual_command, int mallocd)
 		return;
 	} else if (pid == 0)
 	{
-		if (execve(actual_command, argv, NULL) == -1)
+		if (execve(actual_command, argv, environ) == -1)
 		{
 			perror("Error executing command");
 			exit(EXIT_FAILURE);
