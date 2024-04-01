@@ -53,6 +53,8 @@ void execmd(char **argv)
 
 		if (strcmp(command, "exit") == 0)
 		{
+			free(argv);
+			free(command);
 			exec_exit();
 		} else if (strcmp(command, "env") == 0)
 		{
