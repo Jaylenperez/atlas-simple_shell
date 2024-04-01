@@ -37,7 +37,7 @@ void exec_command(char **argv, char *actual_command, int mallocd)
 	} else
 	{
 		waitpid(pid, &status, 0);
-		if (mallocd == 0)
+		if (mallocd == 1)
 			free(actual_command);
 	}
 }
@@ -68,6 +68,7 @@ void execmd(char **argv)
 		{
 			actual_command = command;
 			not_mallocd = 1;
+			mallocd = 0;
 			/* fprintf(stderr, "Error: command not found: %s\n", command); */
 			/* return; */
 		}
