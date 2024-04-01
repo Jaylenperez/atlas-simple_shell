@@ -76,8 +76,5 @@ void execmd(char **argv)
 			mallocd = 1;
 
 		exec_command(argv, actual_command, mallocd);
-
-		if(mallocd)
-			free(actual_command);
 	}
 }
