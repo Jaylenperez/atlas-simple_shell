@@ -17,7 +17,7 @@ void exec_env(void)
 	}
 }
 
-void exec_command(char *actual_command, char **argv, int mallocd)
+void exec_command(char **argv, char *actual_command, int mallocd)
 {
 	pid_t pid;
 	int status;
@@ -74,6 +74,6 @@ void execmd(char **argv)
 		else if (actual_command && not_mallocd == 0)
 			mallocd = 1;
 
-		exec_command(actual_command, argv, mallocd);
+		exec_command(argv, actual_command, mallocd);
 	}
 }
