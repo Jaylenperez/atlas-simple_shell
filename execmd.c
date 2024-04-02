@@ -2,9 +2,9 @@
 
 extern char **environ;
 
-/*void exec_exit(void)*/
-	/* printf("Exiting shell....\n"); */
-	/* exit(EXIT_SUCCESS); */
+/**
+ * exec_env - Prints the environment of the environment variable array
+ */
 
 void exec_env(void)
 {
@@ -15,6 +15,12 @@ void exec_env(void)
 	}
 }
 
+/**
+ * exec_command - Executes a command
+ * @argv: Argument vector
+ * @actual_command: Actual command to execute
+ * @mallocd: Flag indicating if actual_command was dynamically allocated
+ */
 void exec_command(char **argv, char *actual_command, int mallocd)
 {
 	pid_t pid;
@@ -40,6 +46,10 @@ void exec_command(char **argv, char *actual_command, int mallocd)
 	}
 }
 
+/**
+ * execmd - Executes a command with arguments
+ * argv: Argument vector
+ */
 void execmd(char **argv)
 {
 	char *command = NULL, *actual_command = NULL;
