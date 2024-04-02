@@ -2,7 +2,7 @@
 /**
  * get_location - Retrieve the full path of a command executable.
  * @command: The command name.
- * 
+ *
  * Return: A pointer to the location of the command if found, otherwise NULL
  */
 char *get_location(char *command)
@@ -34,7 +34,7 @@ char *get_location(char *command)
 			strcpy(file_path, path_token);
 			strcat(file_path, "/");
 			strcat(file_path, command);
-			
+
 			if (stat(file_path, &buffer) == 0)
 			{
 				free(path_copy);
@@ -49,6 +49,6 @@ char *get_location(char *command)
 		free(path_copy);
 	}
 	if (stat(command, &buffer) == 0)
-		return (_strdup(command));   
+		return (_strdup(command));
 	return (NULL);
 }
