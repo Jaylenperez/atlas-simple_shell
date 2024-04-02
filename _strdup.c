@@ -2,8 +2,8 @@
 /**
  * _strdup - Duplicate a string.
  * @str: The string to duplicate.
- * 
- * Return: A pointer to the duplicated string, or NULL if memory allocation fails.
+ *
+ * Return: A pointer to the duplicated string, or NULL if memory alloc fails.
  */
 char *_strdup(const char *str)
 {
