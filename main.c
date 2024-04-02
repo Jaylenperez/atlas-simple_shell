@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * main - Entry point
+ * @ac: Argument count
+ * @argv: Argument vector
+ * 
+ * Return: Always 0
+ */
 int main(int ac, char **argv)
 {
     char *prompt = "(Eshell) $ ";

@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * get_location - Retrieve the full path of a command executable.
+ * @command: The command name.
+ * 
+ * Return: A pointer to the location of the command if found, otherwise NULL
+ */
 char *get_location(char *command)
 {
 	char *path, *path_copy, *path_token, *file_path;
