@@ -57,7 +57,7 @@ The shell supports standard commands, as well as some special commands for envir
 
 ## :ocean: <span id="flowcharts">Flowcharts</a>
 
-![Image](insert image link here)
+![Image](/flowchart.png)
 
 ## :open_file_folder: <span id="files-description">Files Description</span>
 
