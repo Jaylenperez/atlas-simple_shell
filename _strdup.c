@@ -7,17 +7,17 @@
  */
 char *_strdup(const char *str)
 {
-    size_t len = strlen(str) + 1;
-    char *dup = malloc(len);
+	size_t len = strlen(str) + 1;
+	char *dup = malloc(len);
 
-    if (dup != NULL)
-    {
-        char *ptr = dup;
-        while (*str != '\0')
-        {
-            *ptr++ = *str++;
-        }
-        *ptr = '\0';
-    }
-    return (dup);
+	if (dup != NULL)
+	{
+		char *ptr = dup;
+		while (*str != '\0')
+		{
+			*ptr++ = *str++;
+		}
+		*ptr = '\0';
+	}
+	return (dup);
 }
