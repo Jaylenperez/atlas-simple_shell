@@ -5,6 +5,10 @@
  * @ac: Argument count
  * @argv: Argument vector
  *
+ * Description: This function serves as the entry point of the program.
+ * It reads commands from the user, parses them into tokens, and executes
+ * the correspoding commands.
+ * 
  * Return: Always 0
  */
 int main(int ac, char **argv)
