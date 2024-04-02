@@ -4,8 +4,9 @@ extern char **environ;
 
 /**
  * exec_env - Prints the environment of the environment variable array
+ * 
+ * This function prints the environment variables present in the environment variable array.
  */
-
 void exec_env(void)
 {
 	char **current;
@@ -20,6 +21,8 @@ void exec_env(void)
  * @argv: Argument vector
  * @actual_command: Actual command to execute
  * @mallocd: Flag indicating if actual_command was dynamically allocated
+ * 
+ * This function executes a command with the given arguments.
  */
 void exec_command(char **argv, char *actual_command, int mallocd)
 {
@@ -49,6 +52,8 @@ void exec_command(char **argv, char *actual_command, int mallocd)
 /**
  * execmd - Executes a command with arguments
  * argv: Argument vector
+ * 
+ * This function executes a command with the given arguments.
  */
 void execmd(char **argv)
 {
@@ -77,8 +82,6 @@ void execmd(char **argv)
 		{
 			actual_command = command;
 			not_mallocd = 1;
-			/* fprintf(stderr, "Error: command not found: %s\n", command); */
-			/* return; */
 		}
 		else if (actual_command && not_mallocd == 0)
 			mallocd = 1;
