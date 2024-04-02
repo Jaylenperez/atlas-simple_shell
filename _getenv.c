@@ -1,10 +1,14 @@
 #include "main.h"
+
 /**
  * *_getenv - Function that returns a pointer to a string in envp
  * @name: key to find in envp
+ * 
+ * Description: _getenv searches for the environment string pointed
+ * to by name and returns a pointer to the associated value string.
+ * 
  * Return: pointer to the value matched with key
  */
-
 char *_getenv(const char *name)
 {
 	extern char **environ;
