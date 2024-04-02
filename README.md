@@ -43,6 +43,12 @@ The shell supports standard commands, as well as some special commands for envir
 
 - `char *get_location(char *command);` : used to extract the location information from a given command string
 
+- `char *_getenv(const char *name);` : used to ...
+
+- `char *_strdup(const char *str);` : used to ...
+
+- `void exec_command(char **argv, char *actual_command, int mallocd);` : used to ...
+
 ## :clipboard: <span id="requirements">Requirements</span>
 - Allowed editors: **vi**, **vim**, **emacs**.
 - All the files will be compiled on **Ubuntu 20.04 LTS** using **gcc**.
@@ -97,9 +103,7 @@ Here are some examples of commands that you can run:
 
 ## :blue_book: <span id="man-page">MAN page</span>
 
-Execution: `man_1_simple_shell`
-
-![Image](Insert screenshot of man page here)
+Execution: `./man_1_simple_shell.sh`
 
 ## :sparkles: <span id="authors">Authors</span>
 **Suntha Lucas**
