@@ -1,0 +1,1 @@
+groff -man -Tascii man_1_simple_shell.1 | less
