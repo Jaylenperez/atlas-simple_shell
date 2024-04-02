@@ -3,6 +3,9 @@
  * get_location - Retrieve the full path of a command executable.
  * @command: The command name.
  *
+ * Description: This function searches for the full path of a command executable
+ * by checking directories listed in the PATH environment variable.
+ * 
  * Return: A pointer to the location of the command if found, otherwise NULL
  */
 char *get_location(char *command)
